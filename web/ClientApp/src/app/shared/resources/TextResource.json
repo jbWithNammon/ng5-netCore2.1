@@ -1,0 +1,27 @@
+{
+  "1": {
+    "Message.Submit": "ตกลง",
+    "ModuleTest.CodeTest": "FirstLanguage",
+    "ModuleTest2.CodeTest2": "FirstLanguage2",
+    "ModuleTest3.CodeTest3": "FirstLanguage3"
+
+  },
+  "2": {
+    "Message.Submit": "Submit",
+    "ModuleTest.CodeTest": "SecondLanguage",
+    "ModuleTest2.CodeTest2": "SecondLanguage2",
+    "ModuleTest3.CodeTest3": "SecondLanguage3"
+  },
+  "3": {
+    "Message.Submit": "SubmitL3",
+    "ModuleTest.CodeTest": "ThirdLanguage",
+    "ModuleTest2.CodeTest2": "ThirdLanguage2",
+    "ModuleTest3.CodeTest3": "ThirdLanguage3"
+  },
+  "4": {
+    "Message.Submit": "SubmitL4",
+    "ModuleTest.CodeTest": "FourthLanguage",
+    "ModuleTest2.CodeTest2": "FourthLanguage2",
+    "ModuleTest3.CodeTest3": "FourthLanguage3"
+  }
+}

@@ -1,0 +1,118 @@
+<h1>Course Management</h1>
+<!-- <div>{{message.getMessage('Message.test')}}</div> -->
+<!-- <div>
+    
+    Categories : <input type="text" [(ngModel)]="category" (ngModelChange)="category = $event">
+</div>
+<div>
+    Effective : <input type="date" [(ngModel)]="courseName" (ngModelChange)="courseName = $event">
+    To : <input type="date" [(ngModel)]="category" (ngModelChange)="category = $event">
+</div>
+<button  class="btn btn-primary btn-md" type="button" (click)="getLogin()">Search</button>
+ -->
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+        Course Management
+    </div>
+    <div class="card-body">
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="usr"> Course Name : </label>
+                <input type="text" [(ngModel)]="txtCourseName" (ngModelChange)="courseName = $event">
+            </div>
+            <div class="col-sm-4">
+                <span  class="BusTitle">Categories :
+                    <select [(ngModel)]="txtCategories"style="float:right;margin-right:10px;">
+                    <option *ngFor="let optCat of categoriesList" value={{optCat.ID}}> {{optCat.Name_L2}} </option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="usr"> Effective : </label>
+                <input type="date" [(ngModel)]="txtDateFrom" (ngModelChange)="txtDateFrom = $event">
+            </div>
+            <div class="col-sm-4">
+                <label for="usr"> To : </label>
+                <input type="date" [(ngModel)]="txtDateTo" (ngModelChange)="txtDateTo = $event">
+            </div>
+            <button  class="btn btn-primary btn-md" type="button" (click)="searchCourse()">Search</button>
+        </div>
+    </div>
+</div>
+<button  class="btn btn-primary btn-md" type="button" routerLink="/CourseManagement/AddCourse">Add</button>
+<div class="row" style="margin:10px;">
+    <div class="col-md-12">
+      <div class="tab-content">
+        <div class="panel-table">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover" style="color:#152F54">
+              <thead class="table_bg">
+                <tr style="height:45px;">
+                  <th class="th_center">
+                    Course Name
+                  </th>
+                  <th class="th_center">
+                    Categories
+                  </th>
+                  <th>
+                    Duration
+                  </th>
+                  <th>
+                    Total Topic
+                  </th>
+                  <th>
+                    Update By
+                  </th>
+                  <th>
+                    Last Update
+                  </th>
+                  <th>
+                    Edit
+                  </th>
+                  <th>
+                    Content
+                  </th>
+                  <th>
+                    Examination
+                  </th>
+                </tr>
+              </thead>
+              <tr *ngFor="let data of courseList">
+                <td class="th_center">
+                  {{[data.Name_L1,data.Name_L2,data.Name_L3,data.Name_L4] | languagePipe: languageId}}
+                </td>
+                <td class="th_center">
+                  {{[data.CatMaster.Name_L1,data.CatMaster.Name_L2,data.CatMaster.Name_L3,data.CatMaster.Name_L4] | languagePipe: languageId}}
+                </td>
+                <td>
+                  {{data.EffDate}} - {{data.ExpDate}}
+                </td>
+                <td>
+                  {{data.TotalTopic}}
+                </td>
+                <td>
+                  {{[data.EmpMaster.FirstName_L1,data.EmpMaster.FirstName_L2,data.EmpMaster.FirstName_L3,data.EmpMaster.FirstName_L4] | languagePipe: languageId}}
+                  {{[data.EmpMaster.LastName_L1,data.EmpMaster.LastName_L2,data.EmpMaster.LastName_L3,data.EmpMaster.LastName_L4] | languagePipe: languageId}}
+                  
+                </td>
+                <td>
+                  {{data.UpdateDate}}
+                </td>
+                <td>
+                  edit
+                </td>
+                <td>
+                    <button  class="btn btn-primary btn-md" type="button" routerLink="/CourseManagement/CourseStructure/{{ data.ID }}">content</button>
+                </td>
+                <td>
+                  exam
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

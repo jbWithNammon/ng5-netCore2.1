@@ -1,0 +1,15 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-offset-5 col-md-3">
+        <div class="form-login">
+            <h4>Welcome</h4>
+            <input type="text" class="form-control input-sm chat-input" [(ngModel)]="userName" name="usn" (ngModelChange)="userName = $event" placeholder="Username" >
+            <input type="password" class="form-control input-sm chat-input" [(ngModel)]="password" name="pwd" (ngModelChange)="password = $event" placeholder="Password">
+            <div class="wrapper">
+                <span class="group-btn">     
+                    <button  class="btn btn-primary btn-md" type="button" (click)="getLogin()">Login <i class="fa fa-sign-in"></i></button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

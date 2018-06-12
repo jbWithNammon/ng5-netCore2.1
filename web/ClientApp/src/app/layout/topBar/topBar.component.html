@@ -1,0 +1,24 @@
+<div class="esn-nav-top w-100">
+<div *ngIf="!isAuth" class="login-nav">
+    <!-- <input type="text" class="form-control-login UsernameInput" style="margin-left:10px;" [(ngModel)]="userName" name="usn" (ngModelChange)="userName = $event"
+     placeholder="Username" >
+    <input type="password" class="form-control-login PasswordInput" [(ngModel)]="password" name="pwd" (ngModelChange)="password = $event"
+     (keyup.enter)="getLogin()" placeholder="Password">&nbsp;
+    <button  type="button" (click)="getLogin()">Login</button> -->
+    <button  type="button" (click)="setLang('TH')">ไทย</button>
+    <button  type="button" (click)="setLang('EN')">English</button>
+</div>
+<div *ngIf="isAuth" class="login-nav">
+    <button  type="button" (click)="getLogOut()">Logout</button>
+    <!-- <button  type="button" (click)="setLang('TH')">ไทย</button>
+    <button  type="button" (click)="setLang('EN')">English</button> -->
+</div>
+<div>
+    <button type="button" class="btn btn-danger" (click)="setLanguage('1')">Language 1</button>
+<button type="button" class="btn btn-dark" (click)="setLanguage('2')">Language 2</button>
+<button type="button" class="btn btn-light" (click)="setLanguage('3')">Language 3</button>
+<button type="button" class="btn btn-primary" (click)="setLanguage('4')">Language 4</button>
+</div>
+</div>
+
+

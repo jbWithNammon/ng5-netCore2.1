@@ -1,0 +1,162 @@
+
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+        <h1>Add Course</h1>
+    </div>
+   <!--  <div class="card-body">
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="usr"> Course Name : </label>
+                <input type="text" [(ngModel)]="courseName" (ngModelChange)="courseName = $event">
+            </div>
+            <div class="col-sm-4">
+                <span  class="BusTitle">Categories :
+                    <select [(ngModel)]="categoriesList"style="float:right;margin-right:10px;">
+                    <option *ngFor="let optCat of categoriesList" value={{optCat.ID}}> {{optCat.Name_L2}} </option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="usr"> Effective : </label>
+                <input type="date" [(ngModel)]="fromDate" (ngModelChange)="fromDate = $event">
+            </div>
+            <div class="col-sm-4">
+                <label for="usr"> To : </label>
+                <input type="date" [(ngModel)]="toDate" (ngModelChange)="toDate = $event">
+            </div>
+            <button  class="btn btn-primary btn-md" type="button" (click)="searchCourse()">Search</button>
+        </div>
+    </div> -->
+</div>
+
+<nav> 
+    <div class="nav nav-tabs with-nav-tabs.panel-default" id="nav-tab" role="tablist"> 
+    <a class="nav-item nav-link active" (click)="onSelectTabInfo($event)" id="tabID_TH" data-toggle="tab" href="javascript:void(0)" role="tab">TH</a> 
+    <a class="nav-item nav-link" (click)="onSelectTabInfo($event)" id="tabID_EN" data-toggle="tab" href="javascript:void(0)" role="tab">EN</a> 
+    <a class="nav-item nav-link" (click)="onSelectTabInfo($event)" id="tabID_3" data-toggle="tab" href="javascript:void(0)" role="tab">Langeage 3</a> 
+    <a class="nav-item nav-link" (click)="onSelectTabInfo($event)" id="tabID_4" data-toggle="tab" href="javascript:void(0)" role="tab">Langeage 4</a> 
+    </div> 
+</nav> 
+    
+    <div class="tab-content w-100 p-3 card-header" id="nav-tabContent" > 
+      <div class="tab-pane fade show active" id="TabTH" role="tabpanel"> 
+        <div class="form-group w-100 p-3"> 
+          <label>Course Name: </label> 
+          <input type="text" [(ngModel)]="courseInsert.Name_L1"> 
+        </div> 
+        <div class="form-group w-100 p-3"> 
+          <label>Target: </label> 
+          <input type="text" [(ngModel)]="courseInsert.Target_L1">
+          <label>Criteria: </label> 
+          <input type="text" [(ngModel)]="courseInsert.Criteria_L1"> 
+        </div>
+        <div class="form-group w-100 p-3"> 
+          <label>Introduction: </label> 
+          <input type="text" [(ngModel)]="courseInsert.Intro_L1"> 
+        </div>
+        <div class="form-group w-100 p-3"> 
+          <label>Objective: </label> 
+          <input type="text" [(ngModel)]="courseInsert.Object_L1"> 
+        </div> 
+    </div> 
+    
+    <div class="tab-pane fade show" id="TabEN" role="tabpanel" > 
+        <div class="form-group w-100 p-3"> 
+            <label>Course Name: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Name_L2"> 
+          </div> 
+          <div class="form-group w-100 p-3"> 
+            <label>Target: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Target_L2">
+            <label>Criteria: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Criteria_L2"> 
+          </div>
+          <div class="form-group w-100 p-3"> 
+            <label>Introduction: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Intro_L2"> 
+          </div>
+          <div class="form-group w-100 p-3"> 
+            <label>Objective: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Object_L2"> 
+          </div> 
+    </div> 
+    
+    <div class="tab-pane fade show" id="Tab3" role="tabpanel" > 
+        <div class="form-group w-100 p-3"> 
+            <label>Course Name: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Name_L3"> 
+          </div> 
+          <div class="form-group w-100 p-3"> 
+            <label>Target: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Target_L3">
+            <label>Criteria: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Criteria_L3"> 
+          </div>
+          <div class="form-group w-100 p-3"> 
+            <label>Introduction: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Intro_L3"> 
+          </div>
+          <div class="form-group w-100 p-3"> 
+            <label>Objective: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Object_L3"> 
+          </div> 
+    </div> 
+    <div class="tab-pane fade show" id="Tab4" role="tabpanel" > 
+        <div class="form-group w-100 p-3"> 
+            <label>Course Name: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Name_L4"> 
+          </div> 
+          <div class="form-group w-100 p-3"> 
+            <label>Target: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Target_L4">
+            <label>Criteria: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Criteria_L4"> 
+          </div>
+          <div class="form-group w-100 p-3"> 
+            <label>Introduction: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Intro_L4"> 
+          </div>
+          <div class="form-group w-100 p-3"> 
+            <label>Objective: </label> 
+            <input type="text" [(ngModel)]="courseInsert.Object_L4"> 
+          </div> 
+    </div>
+</div>
+    <div class="card-body">
+        <div class="form-group row w-100 p-3">
+                <span  class="BusTitle">Categories :
+                    <select [(ngModel)]="courseInsert.CategoryID"style="float:right;margin-right:10px;">
+                    <option *ngFor="let optCat of categoriesList" value={{optCat.ID}}> {{optCat.Name_L2}} </option>
+                    </select>
+                </span>
+        </div>
+        <div class="form-group row w-100 p-3">
+            <div class="col-sm-4">
+                <label for="usr"> Effective : </label>
+                <input type="date" [(ngModel)]="courseInsert.EffDate" (ngModelChange)="courseInsert.EffDate = $event">
+            </div>
+            <div class="col-sm-4">
+                <label for="usr"> To : </label>
+                <input type="date" [(ngModel)]="courseInsert.ExpDate" (ngModelChange)="courseInsert.ExpDate = $event">
+            </div>
+        </div>
+        <div class="form-group row w-100 p-3">
+            <div class="form-group row w-100 p-3">
+                <span  class="BusTitle">Course Type:
+                    <select [(ngModel)]="courseInsert.CourseTypeID"style="float:right;margin-right:10px;">
+                    <option *ngFor="let optCat of categoriesList" value={{optCat.ID}}> {{optCat.Name_L2}} </option>
+                    </select>
+                </span>
+        </div>
+        <div class="form-group row w-100 p-3">
+            <span  class="BusTitle">Location:
+                <select [(ngModel)]="courseInsert.CourseLocationID"style="float:right;margin-right:10px;">
+                <option *ngFor="let optCat of categoriesList" value={{optCat.ID}}> {{optCat.Name_L2}} </option>
+                </select>
+            </span>
+    </div>
+            <button  class="btn btn-primary btn-md" type="button" (click)="nextPage()">Next</button>
+        </div>
+    </div>

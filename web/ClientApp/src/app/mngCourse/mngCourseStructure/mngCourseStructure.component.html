@@ -1,0 +1,61 @@
+
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+      <h1>Course Structure</h1>
+    </div>
+<div class="row" style="margin:10px;">
+    <div class="col-md-12">
+      <div class="tab-content">
+        <div class="panel-table">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover" style="color:#152F54">
+              <thead class="table_bg">
+                <tr style="height:45px;">
+                  <th class="th_center">
+                    No.
+                  </th>
+                  <th class="th_center">
+                    Topic Name
+                  </th>
+                  <th>
+                    Type
+                  </th>
+                  <th>
+                    Media Type
+                  </th>
+                  <th>
+                    
+                  </th>
+                  <th>
+                    
+                  </th>
+                </tr>
+              </thead>
+              <tr *ngFor="let data of courseList; let i = index">
+                <td class="th_center">
+                  {{i+1}}.
+                </td>
+                <td class="th_center">
+                  {{data.TopicName_L1}}
+                </td>
+                <td>
+                  {{[data.ContentMaster.Name_L1,data.ContentMaster.Name_L2,data.ContentMaster.Name_L3,data.ContentMaster.Name_L4] | languagePipe: languageId}}
+                </td>
+                <td>
+                  <select (click)="getOldMediatypeID(data.MediaTypeID)" *ngIf="data.ContentID == 1" (change)="onMediaTypeSelect($event.target.value,data.ID)" [(ngModel)]="data.MediaTypeID"style="float:right;margin-right:10px;">
+                    <option *ngFor="let optMedia of mediaTypeList" value={{optMedia.ID}}> {{optMedia.Name_L1}} </option>
+                    </select>
+                </td>
+                <td>
+                  <button  class="btn btn-primary btn-md" type="button" routerLink="/CourseManagement/CourseStructure/{{ data.ID }}">Edit</button>
+                </td>
+                <td>
+                  <button  class="btn btn-primary btn-md" type="button" routerLink="/CourseManagement/CourseStructure/{{ data.ID }}">delete</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

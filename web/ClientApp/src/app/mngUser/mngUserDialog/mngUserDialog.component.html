@@ -1,0 +1,61 @@
+<div>
+    <mat-dialog-content>
+        <div class="d-flex justify-content-center flex-column mt-5 mb-5">
+            <div class="text-center">
+                <h3>Admin Account</h3>
+            </div>
+            <div>
+                <label>Search Employee Info</label>   
+            </div>
+            <div class="d-flex justify-content-center flex-row">
+                <div class="d-flex flex-column text-right">
+                    <div class="p-2">
+                        <label>Employee Name</label>
+                    </div>
+                    <div class="p-2">
+                        <label>Position</label>
+                    </div>
+                    <div class="p-2">
+                        <label>Division</label>
+                    </div>
+                    <div class="p-2">
+                        <Label>Department</Label>
+                    </div>
+                </div>
+                <div class="d-flex flex-column text-left">
+                    <div class="p-2">
+                        <input type="text">
+                    </div>
+                    <div class="p-2">
+                        <select [(ngModel)]="PositionList">
+                            <option *ngFor="let Position of PositionList" value="{{Position.PostionID}}">{{Position.Name_L1}}</option>
+                        </select>
+                    </div>
+                    <div class="p-2">
+                        <input type="text">
+                    </div>
+                    <div class="p-2">
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <Label>Permission</Label>
+            </div>
+            <div class="d-flex justify-content-center flex-row">
+                <div>
+                    <input type="radio" name='qPermission'>
+                    <Label class="p-1">Rean Only</Label>
+                </div>
+                <div>
+                    <input type="radio" name='qPermission'>
+                    <Label class="p-1">Create and Modify</Label>
+                </div>
+            </div>
+        </div>
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+                <button class="btn btn-edb" style="margin-bottom:10px; margin-left:4px;width:90px;height:40px" >Add</button>
+                <button class="btn btn-edb" style="margin-bottom:10px; margin-left:4px;width:90px;height:40px" (click)="closeDialog()">Cancel</button>
+    </mat-dialog-actions>
+</div>

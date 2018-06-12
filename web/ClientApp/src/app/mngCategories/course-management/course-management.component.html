@@ -1,0 +1,71 @@
+<div class="card" style="width: 95%;margin: 20px">
+  <div class="card-header bg-info">
+    Examination
+  </div>
+  <div class="card-body">
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label>Course Nmae: Course1</label>
+            </div>
+            <div class="col-sm-6">
+                <label>Lesson: </label>
+                <select [(ngModel)]="cmbPriority">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label>Quiz Name: </label>
+                <input type="text" [(ngModel)]="txtCompany">
+            </div>
+            <div class="col-sm-6">
+                <label>Examination Type: </label>
+                <select [(ngModel)]="cmbPriority">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+        </div>
+        <hr style="border-top: 1px solid black">
+        <div class="row">
+            <div class="col-sm-6">
+                <label>Quiz List: </label>
+            </div>
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-success"
+                        (click)="openDialog('Add')" style="float: right;margin: 10px;">Add
+                </button>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                      <th></th>
+                      <th>Quiz Nmae</th>
+                      <th>Lesson</th>
+                      <th>Examination Type</th>
+                      <th>Question Qty</th>
+                      <th>Score</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                </thead>
+                    <tr *ngFor="let data of results; let i = index;let lastData = last">
+                        <td>{{i + 1}}</td>
+                        <td>{{ data.Title_L1 }}</td>
+                        <td>{{ data.TopicName_L1 }}</td>
+                        <td>{{ data.Name_L1 }}</td>
+                        <td>{{ data.QuestionQty }}</td>
+                        <td>{{ data.Score }}</td>
+                        <td><button  type="button" (click)="priorityUp(i)" class="btn btn-success">Edit</button></td>
+                        <td><button  type="button" (click)="priorityDown(i)" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                  </table>
+    </div>
+</div>

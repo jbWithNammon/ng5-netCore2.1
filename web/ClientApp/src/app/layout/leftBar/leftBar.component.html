@@ -1,0 +1,20 @@
+<!-- <nav  class="navbar-default navbar-side esn-nav-left" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" *ngFor="let sub of menu">
+                <li (click)="setRouterLink(sub.Link)">
+                    <a href="javascript:void(0)" >
+                        <i [ngClass]="sub.Class"></i>
+                        <label style="cursor: pointer">{{sub.Display}}</label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>  -->
+    <div class="esn-nav-left">
+        <div class="list-group" *ngFor="let sub of menu">
+            <a href="javacript:void(0)" (click)="setRouterLink(sub.Link)" class="list-group-item list-group-item-action">{{sub.Display}}</a>
+            <!-- <a href="#" class="list-group-item list-group-item-action">Second item</a>
+            <a href="#" class="list-group-item list-group-item-action">Third item</a> -->
+        </div>
+    </div>
+    <!--  -->

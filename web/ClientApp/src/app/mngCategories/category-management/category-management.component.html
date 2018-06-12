@@ -1,0 +1,61 @@
+<div class="card" style="width: 100%;">
+  <div class="card-header">
+    Category Managemanet
+  </div>
+  <div class="card-body">
+      <div class="form-group">
+          <label>Category Nmae: </label>
+          <input type="text" [(ngModel)]="txtCategoryName">
+      </div>
+      <div class="form-group row">
+          <div class="col-sm-4">
+              <label>Effective From: </label>
+              <input type="date"[(ngModel)]="txtDateFrom">
+          </div>
+          <div class="col-sm-4">
+              <label>To: </label>
+              <input type="date" [(ngModel)]="txtDateTo" >
+          </div>
+          <div class="col-sm-4">
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="getSearch()" style="text-align: center;margin: 10px;">Search</button>
+  </div>
+</div>
+<div class="card" style="width: 100%;">
+    <!-- <div class="card-header">
+      Category Managemanet
+    </div> -->
+    <div class="card-body">
+            <button type="button" class="btn btn-success" (click)="openDialog('Add')" style="float: right;margin: 10px;">Add</button>
+            <table class="table table-bordered table-hover table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                      <th></th>
+                      <th>Category Name</th>
+                      <th>Category Description</th>
+                      <th>Effective Duration</th>
+                      <th>Update By</th>
+                      <th>Update Date</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let data of results; let i = index;let lastData = last">
+                    <td>{{i + 1}}</td>
+                    <td>{{ data.Name_L1 }}</td>
+                    <td>{{ data.Description_L1 }}</td>
+                    <td>{{ data.EffDateShow }} - {{ data.ExpDateShow }}</td>
+
+                    <td>{{ data.UpdateBy }}</td>
+                    <td>{{ data.UpdateDate }}</td>
+                    <td><button *ngIf = "i > 0" type="button" (click)="priorityUp(i)" class="btn btn-success">Up</button></td>
+                    <td><button *ngIf = "!lastData" type="button" (click)="priorityDown(i)" class="btn btn-danger">Down</button></td>
+                    <td><button type="button" class="btn btn-primary" (click)="openDialog(data.ID)">Edit</button></td>
+                    <td><button type="button" class="btn btn-dark" routerLink="/CategoryManagement/{{ data.ID }}" >Edit</button></td>
+                </tr>
+            </table>
+    </div>
+  </div>

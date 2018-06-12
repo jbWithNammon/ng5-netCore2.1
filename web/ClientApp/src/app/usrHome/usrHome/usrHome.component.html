@@ -1,0 +1,49 @@
+<h1>Hello, Home!</h1>
+<div>{{message.getMessage('Message.Submit')}}</div>
+<input readonly [numpad] type="text" [(ngModel)]="directiveData" placeholder="directive test" />
+<div class="form-group">
+    <h2>Example language
+        <span class="badge badge-secondary">{{[course.Criteria_L1,course.Criteria_L2,course.Criteria_L3,course.Criteria_L4] | languagePipe: languageId}}</span>
+    </h2>
+    <label for="usr">{{[course.Criteria_L1,course.Criteria_L2,course.Criteria_L3,course.Criteria_L4] | languagePipe: languageId}}</label>
+    <select (click)="fnBefore($event.target.value)" [ngModel]="ddList" (ngModelChange)="onSearchChange($event)" name="sel3">
+            <option *ngFor="let item of ddList" [value]="item.value">{{item.display}}</option>
+        </select>
+{{scale}}
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr><th>data</th><th>name</th><th>age</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{[course.Criteria_L1,course.Criteria_L2,course.Criteria_L3,course.Criteria_L4] | languagePipe: languageId}}</td>
+            <!-- <td *ngIf="cultureId == 2">{{course.Criteria_L2}}</td>
+            <td *ngIf="cultureId == 3">{{course.Criteria_L3}}</td>
+            <td *ngIf="cultureId == 4">{{course.Criteria_L4}}</td> -->
+            <td>name</td>
+            <td>age</td>
+            <!-- <td>age</td> -->
+        </tr>
+        <tr>
+                <td>{{[course.Criteria_L1,course.Criteria_L2,course.Criteria_L3,course.Criteria_L4] | languagePipe: languageId}}</td>
+                <!-- <td *ngIf="cultureId == 2">{{course.Criteria_L2}}</td>
+                <td *ngIf="cultureId == 3">{{course.Criteria_L3}}</td>
+                <td *ngIf="cultureId == 4">{{course.Criteria_L4}}</td> -->
+                <td>name</td>
+                <td>age</td>
+            </tr>
+    </tbody>
+</table>
+<!--     <div class="form-group"> 
+        <label>File</label> 
+        <input type="file" name="file" ngModel (change)="fileChangeEvent($event)"> 
+        <button  type="button" (click)="onUpload()">Upload</button>
+    </div> -->
+<div>
+    <button type="button" class="btn btn-dark" (click)="gotoBase64()">base64</button>
+</div>
+<div>
+    <button type="button" class="btn btn-dark" (click)="getSearch()">Search</button>
+</div>
+<!-- <div><input type="file" id="avatar" (change)="onFileChange($event)" #fileInput></div> -->

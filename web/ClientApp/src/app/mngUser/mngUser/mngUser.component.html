@@ -1,0 +1,67 @@
+<div class='container'>
+    <div class="d-flex justify-content-start">
+        <div>
+            <h1>Admin Account Management</h1>
+        </div>
+        <div class="bg-danger">
+        </div>
+    </div> 
+    <div class="d-flex mt-3 mb-3">
+        <div class="mr-3">
+            <Label>Employee ID :</Label>
+            <input type="text" [(ngModel)] = "txtEmpCode">
+        </div>
+        <div class="mr-3">
+            <Label>Name :</Label>
+            <input type="text" [(ngModel)] = "txtEmpName">
+        </div>
+        <div class="mr-3">
+            <label>Position :</label>
+            <select>
+                <option *ngFor="let Position of PositionList" value="{{Position.PostionID}}">{{Position.Name_L1}}</option>
+            </select>
+        </div>
+        <div class="ml-auto">
+            <button type="button" class="btn-light" (click)="getSearch()">Search</button>
+        </div>
+    </div>
+    <hr>
+    <div class='d-flex justify-content-between'>
+        <div>
+            <h3>Admin Account List</h3>
+        </div>
+        <div>
+            <button class="btn-light" (click)="openDialog('Add')">Add</button>
+        </div>       
+    </div>  
+    <div>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Ext.</th>
+                <th>Position</th>
+                <th>Permission</th>
+                <th>Updatedate</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of UserList'>
+                <td>{{user.EmpCode}}</td>
+                <td>{{user.Name_L1}}</td>
+                <td>{{user.Contact}}</td>
+                <td>{{user.Position_L1}}</td>
+                <td>{{user.Permission}}</td>
+                <td>{{user.UIUpdateDate}}</td>
+                <td><button type="button" (click)="openDialog('Update')" class="btn">E</button></td>
+                <td><button type="button" class="btn">D</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <!-- -->
+</div>
+
